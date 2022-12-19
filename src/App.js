@@ -1,25 +1,28 @@
+import React, { Component } from "react";
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+      super()
+      this.state = {};
+  }
+
+  componentDidMount() {
+    fetch('http://numbersapi.com/random/year?json')
+      .then(resp => resp.json())
+      .then(fact => this.setState({fact}));
+  };
+
+   render() {
+    //console.log(this.state);
+    const { fact } = this.state;
+    let text = (fact?.text);
+    
+    return (
+    <p>{text}</p>
+    );
+  }
 }
 
 export default App;
