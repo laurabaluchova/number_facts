@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Card_data } from "./Card_data";
+import CardList from "./CardList";
 
 class App extends Component {
   constructor() {
@@ -17,10 +19,13 @@ class App extends Component {
    render() {
     //console.log(this.state);
     const { fact } = this.state;
-    let text = (fact?.text);
-    
-    return (
-    <p>{text}</p>
+    let text = (fact?.text);  
+            
+    return (      
+      <div>    
+    <p>{text}</p>      
+    <CardList cards = { Card_data } />  
+    </div>
     );
   }
 }
