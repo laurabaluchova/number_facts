@@ -3,11 +3,13 @@ import React, { Component } from "react";
 import './App.css';
 import { Card_data } from "./Card_data";
 import CardList from "./CardList";
+import Card from "./Card";
 
 class App extends Component {
   constructor() {
       super()
       this.state = {};
+      this.data = Card_data;
   }
 
   componentDidMount() {
@@ -20,12 +22,14 @@ class App extends Component {
     //console.log(this.state);
     const { fact } = this.state;
     let text = (fact?.text);  
-            
+    
+    console.log(Card_data);
+
     return (      
       <div>    
-    <p>{text}</p>      
-    <CardList cards = { Card_data } />  
-    </div>
+         <CardList card_data={ Card_data } />
+
+      </div>
     );
   }
 }
