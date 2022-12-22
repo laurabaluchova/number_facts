@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import './App.css';
 import { Card_data } from "./Card_data";
 import CardList from "./CardList";
-import Card from "./Card";
 
 class App extends Component {
   constructor() {
@@ -12,21 +11,20 @@ class App extends Component {
       this.data = Card_data;
   }
 
-  componentDidMount() {
-    fetch('http://numbersapi.com/random/year?json')
-      .then(resp => resp.json())
-      .then(fact => this.setState({fact}));
-  };
+  // componentDidMount() {
+  //   fetch('http://numbersapi.com/random/year?json')
+  //     .then(resp => resp.json())
+  //     .then(fact => this.setState({fact}));
+  // };
 
-   render() {
-    //console.log(this.state);
-    const { fact } = this.state;
-    let text = (fact?.text);  
-    
-    console.log(Card_data);
+  render() {    
+    // const { fact } = this.state;
+    // let text = fact?.text;    
+    // console.log(text);
 
-    return (      
-      <div>    
+    return (
+      <div className="tc">
+        <h1 className="f1">Number facts generator</h1>    
          <CardList card_data={ Card_data } />
 
       </div>

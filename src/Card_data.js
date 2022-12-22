@@ -6,12 +6,12 @@ export const Card_data = [
     },
     {
         id: 2,
-        url: 'math',
+        url: 'year',
         picture: "./calendar_icon.png",
     },
     {
         id: 3,
-        url: 'year',
-        picture: "./calculator_icon.gif",
+        url: 'math',
+        picture: "./calculator_icon.png",
     }
 ];
